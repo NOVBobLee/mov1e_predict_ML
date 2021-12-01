@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BDSE20電影票房預測首頁</title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <!-- <meta name="theme-color" content="#ffffff"> -->
+
+    <link href="assets/css/theme.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+
+    <main class="main" id="top">
+
+      <!-- ===============================================-->
+      <!--  nav bar  -->
+      <!-- ===============================================-->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-4 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+              <a class="navbar-brand" href="#">BDSE20</a>
+              <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link fw-medium active" aria-current="page" href="#home">首頁</a></li>
+              <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#predict">專題成果-票房預測</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ===============================================-->
+      <!--  home main  -->
+      <!-- ===============================================-->
+      <section id="home">
+        <div class="bg-holder" style="background-image:url(assets/img/gallery/hero.png);background-position:center;background-size:cover;"> </div>
+        <div class="container">
+          <div class="row align-items-center min-vh-50 min-vh-sm-75">
+            <div class="col-md-5 col-lg-6 order-0 order-md-1"><img class="w-100" src="assets/img/illustrations/hero-header.png" alt="..." /></div>
+            <div class="col-md-7 col-lg-6 text-md-start text-center">
+              <h1 class="text-light fs-md-5 fs-lg-6">BDSE20電影票房預測專題</h1>
+              <p class="text-light"> 依照輸入變數達成票房預測</p>
+            </div>
+          </div>
+      </section>
+
+      <!-- ===============================================-->
+      <!--  predict params forms  -->
+      <!-- ===============================================-->
+      <section class="py-8" id="predict">
+        <form method="POST" action="{{ url_for('predict') }}">
+          <div class="container mt-5">
+            <div class="form-floating mb-3">
+              <input  type="number" min="0"class="form-control" name="movie_budget" id="floatingInput" required>
+              <label for="floatingInput">成本</label>
+            </div>
+            <div class="row ">         
+              <div class="col-md">
+                <div class="form-floating mb-3 ">
+                  <select class="form-select" name="movie_collection" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected value="0">請選擇</option>
+                    <option value="1">是</option>
+                    <option value="0">否</option>
+                  </select>
+                  <label for="floatingSelect">是否為續集</label>
+                </div>
+              </div>  
+            </div> 
+
+            <div class="row g-3">
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <select class="form-select" name="movie_genre1" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected value="null">請選擇</option>
+                    <option value="Drama">劇情</option>
+                    <option value="Comedy">喜劇</option>
+                    <option value="Action">動作</option>
+                    <option value="Thriller">驚悚</option>
+                    <option value="Romance">浪漫</option>
+                    <option value="Science Fiction">科幻小說</option>
+                    <option value="Adventure">冒險</option>
+                    <option value="Crime">犯罪</option>
+                    <option value="Horror">恐怖</option>
+                    <option value="Family">家庭</option>
+                    <option value="Mystery">神秘</option>
+                    <option value="Animation">動畫</option>
+                    <option value="History">歷史</option>
+                    <option value="Music">音樂</option>
+                    <option value="War">戰爭</option>
+                    <option value="Documentary">記錄</option>
+                    <option value="Western">西部</option>
+                    <option value="Fantasy">幻想</option>
+                    <option value="TV Movie">電視電影</option>                           
+                  </select>
+                  <label for="floatingSelect">電影類型1</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating ">
+                  <select class="form-select" name="movie_genre2" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected value="null">請選擇</option>
+                    <option value="Drama">劇情</option>
+                    <option value="Comedy">喜劇</option>
+                    <option value="Action">動作</option>
+                    <option value="Thriller">驚悚</option>
+                    <option value="Romance">浪漫</option>
+                    <option value="Science Fiction">科幻小說</option>
+                    <option value="Adventure">冒險</option>
+                    <option value="Crime">犯罪</option>
+                    <option value="Horror">恐怖</option>
+                    <option value="Family">家庭</option>
+                    <option value="Mystery">神秘</option>
+                    <option value="Animation">動畫</option>
+                    <option value="History">歷史</option>
+                    <option value="Music">音樂</option>
+                    <option value="War">戰爭</option>
+                    <option value="Documentary">記錄</option>
+                    <option value="Western">西部</option>
+                    <option value="Fantasy">幻想</option>
+                    <option value="TV Movie">電視電影</option>                           
+                  </select>
+                  <label for="floatingSelect">電影類型2</label>
+                </div>
+              </div>  
+              <div class="col-md">
+                <div class="form-floating ">
+                  <select class="form-select" name="movie_genre3" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected value="null">請選擇</option>
+                    <option value="Drama">劇情</option>
+                    <option value="Comedy">喜劇</option>
+                    <option value="Action">動作</option>
+                    <option value="Thriller">驚悚</option>
+                    <option value="Romance">浪漫</option>
+                    <option value="Science Fiction">科幻小說</option>
+                    <option value="Adventure">冒險</option>
+                    <option value="Crime">犯罪</option>
+                    <option value="Horror">恐怖</option>
+                    <option value="Family">家庭</option>
+                    <option value="Mystery">神秘</option>
+                    <option value="Animation">動畫</option>
+                    <option value="History">歷史</option>
+                    <option value="Music">音樂</option>
+                    <option value="War">戰爭</option>
+                    <option value="Documentary">記錄</option>
+                    <option value="Western">西部</option>
+                    <option value="Fantasy">幻想</option>
+                    <option value="TV Movie">電視電影</option>                           
+                  </select>
+                  <label for="floatingSelect">電影類型3</label>
+                </div>
+              </div>  
+            </div> 
+
+            <div class="row g-4">
+              <div class="col-md">
+                <div class="form-floating mb-3">
+                  <input type="number" min="0" name="movie_oscar_winner" class="form-control" id="floatingInput" required>
+                  <label for="floatingInput">奧斯卡得獎數</label>
+                </div>          
+              </div>
+              <div class="col-md">
+                <div class="form-floating ">
+                  <input type="number" min="0" name="movie_goldenglobe_winner" class="form-control" id="floatingInput" required>
+                  <label for="floatingInput">金球獎獎數</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating ">
+                  <input type="number" min="0" name="movie_oscar_nominee" class="form-control" id="floatingInput" required>
+                  <label for="floatingInput">奧斯卡入圍</label>
+                </div>          
+              </div>
+              <div class="col-md">
+                <div class="form-floating ">
+                  <input type="number" min="0" name="movie_goldenglobe_nominee" class="form-control" id="floatingInput" required>
+                  <label for="floatingInput">金球獎得入圍</label>
+                </div>
+              </div>
+            </div>            
+            <div class="col-md">
+              <div class="form-floating mb-6">
+                <input type="number" min="0" class="form-control" name="movie_runtime" id="movie_runtime" required>
+                <label for="floatingInput">演出時間</label>
+              </div>
+            </div>
+
+            <!-- ===============================================-->
+            <!--  predict press button  -->
+            <!-- ===============================================-->
+            <button type="submit" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              預測票房
+            </button>
+        </form>
+
+        <!-- ===============================================-->
+        <!--  JavaScripts  -->
+        <!-- ===============================================-->
+        <script src="vendors/@popperjs/popper.min.js"></script>
+        <script src="vendors/bootstrap/bootstrap.min.js"></script>
+        <script src="vendors/is/is.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+        <script src="vendors/fontawesome/all.min.js"></script>
+        <script src="assets/js/theme.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap" rel="stylesheet">
+  </body>
+
+</html>

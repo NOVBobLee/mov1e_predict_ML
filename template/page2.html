@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <title>預測票房數</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #434e81;
+        }
+
+        .box {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            top: 50%;
+            left: 33%;
+            margin: 70px 0 0 0;
+            border-radius: 30px;
+            /* border: 5px black solid; */
+            background-color:#a1b1f8;
+        }
+
+        .title {
+            padding: 15px;
+            font-size: 48px;
+            font-family: "STHeiti", sans-serif;
+            color: white;
+            text-align: center;
+            /* border: 5px black solid; */
+        }
+
+        .image {
+            float: left;
+            margin: 15px;
+            border: 2px dashed black;
+        }
+        button#btn2index {
+            width:120px;
+            height:40px;
+            font-size:20px;
+            border:2px blue none;
+            background-color:rgba(132, 0, 255, 0.473);
+            border-radius:5px;
+            font-weight:bold;
+            font-family: "STHeiti", sans-serif;
+            color:white;
+            position: absolute;
+            top:90%;
+            left:40%;
+            /* border:2px #a1b1f8 solid; */
+            /* border-radius: 5px; */
+        }
+
+        div#result_frame {
+            padding: 15px;
+            font-size: 70px;
+            font-family: "STHeiti", sans-serif;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1 class="title">票房預測結果</h1>
+        {% if y_pred %}
+        <div id="result_frame">{{(y_pred)}}</div>
+        {% endif %}
+        <h1 class="title">(萬元)</h1>
+        <button id="btn2index" type="button">回首頁</button>
+    </div>
+
+    <script>
+        home_page = "{{ url_for('index') }}";
+        document.querySelector('button#btn2index').onclick = () => {
+            location.href = home_page;
+        };
+    </script>
+</body>
+
+</html>
